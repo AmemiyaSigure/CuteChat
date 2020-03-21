@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "cx.rain.fabricmod.cutechat.mixin",
+  "package": "cx.rain.fabricmod.cutechat.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
   ],
