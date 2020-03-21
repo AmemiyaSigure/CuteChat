@@ -3,6 +3,7 @@ package cx.rain.fabricmod.cutechat;
 import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.net.SocketAddress;
 import java.nio.charset.StandardCharsets;
 
 public class ChatSocket {
@@ -44,6 +45,12 @@ public class ChatSocket {
             bw.flush();
         } catch (IOException ignored) {
         }
+    }
+
+    public void reconnect() throws IOException {
+        SocketAddress address = SOCKET.getRemoteSocketAddress();
+        SOCKET.close();
+        SOCKET.connect(address);
     }
 
     public void dispose() throws IOException {

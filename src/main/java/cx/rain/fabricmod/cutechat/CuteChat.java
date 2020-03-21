@@ -1,5 +1,6 @@
 package cx.rain.fabricmod.cutechat;
 
+import cx.rain.fabricmod.cutechat.commands.Commands;
 import cx.rain.fabricmod.cutechat.events.Events;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.server.MinecraftServer;
@@ -11,6 +12,7 @@ import java.io.IOException;
 public class CuteChat implements ModInitializer {
     public static final ChatSocket SOCKET = new ChatSocket();
     public static final Logger LOGGER = LogManager.getLogger("CuteChat");
+    public static final String VERSION = "1.0.0";
 
     public static MinecraftServer Server = null;
 
@@ -30,6 +32,7 @@ public class CuteChat implements ModInitializer {
         }
 
         new Events();
+        new Commands();
     }
 
 }
