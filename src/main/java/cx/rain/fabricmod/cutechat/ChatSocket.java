@@ -47,10 +47,11 @@ public class ChatSocket {
         }
     }
 
-    public void reconnect() throws IOException {
-        SocketAddress address = SOCKET.getRemoteSocketAddress();
-        SOCKET.close();
-        SOCKET.connect(address);
+    public void reconnect(String host, int port) throws IOException {
+        if (SOCKET.isConnected() && (!SOCKET.isClosed())) {
+            SOCKET.close();
+        }
+        SOCKET.connect(new InetSocketAddress(host, port));
     }
 
     public void dispose() throws IOException {

@@ -14,20 +14,20 @@ public class CuteChat implements ModInitializer {
     public static final Logger LOGGER = LogManager.getLogger("CuteChat");
     public static final String VERSION = "1.0.0";
 
+    public static final String HOST = "localhost";
+    public static final int PORT = 35423;
+
     public static MinecraftServer Server = null;
 
     @Override
     public void onInitialize() {
         LOGGER.info("[CuteChat] Loading...");
 
-        String host = "localhost";
-        int port = 35423;
-
         try {
-            SOCKET.init(host, port);
+            SOCKET.init(HOST, PORT);
             SOCKET.beginReceive();
         } catch (IOException ex) {
-            LOGGER.error("[CuteChat] Can't connect to " + host + ":" + port + "!");
+            LOGGER.error("[CuteChat] Can't connect to " + HOST + ":" + PORT + "!");
             ex.printStackTrace();
         }
 
