@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "cutechat",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Cute Chat",
+  "description": "A chat mod can connect QQ and Minecraft Server With Fabric.",
   "authors": [
-    "Me!"
+    "AmemiyaSigure"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://www.rain.cx/",
+    "sources": "https://github.com/AmemiyaSigure/CuteChat"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "Apache-2.0",
+  "icon": "assets/cutechat/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "cx.rain.fabricmod.cutechat.CuteChat"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "cutechat.mixins.json"
   ],
 
   "depends": {
