@@ -7,7 +7,7 @@ import java.net.SocketAddress;
 import java.nio.charset.StandardCharsets;
 
 public class ChatSocket {
-    private final Socket SOCKET = new Socket();
+    private Socket SOCKET = new Socket();
     private Thread THREAD = null;
     private boolean IS_RUNNING = false;
 
@@ -51,6 +51,7 @@ public class ChatSocket {
         if (SOCKET.isConnected() && (!SOCKET.isClosed())) {
             SOCKET.close();
         }
+        SOCKET = new Socket();
         SOCKET.connect(new InetSocketAddress(host, port));
     }
 
