@@ -13,7 +13,7 @@ import java.util.List;
 public class CuteChat implements ModInitializer {
     public static final ChatSocket SOCKET = new ChatSocket();
     public static final Logger LOGGER = LogManager.getLogger("CuteChat");
-    public static final String VERSION = "1.0.1";
+    public static final String VERSION = "1.0.2";
 
     public static final String HOST = "localhost";
     public static final int PORT = 35423;
