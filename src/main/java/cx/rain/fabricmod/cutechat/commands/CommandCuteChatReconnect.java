@@ -16,9 +16,9 @@ public class CommandCuteChatReconnect {
                         .executes(context -> {
                             try {
                                 CuteChat.SOCKET.reconnect(CuteChat.HOST, CuteChat.PORT);
-                                context.getSource().sendError(new LiteralText("§c[CuteChat] 重连成功！"));
+                                context.getSource().sendError(new LiteralText("[CuteChat] 重连成功！"));
                             } catch (IOException ex) {
-                                context.getSource().sendError(new LiteralText("§c[CuteChat] 重连失败！请参考后台报错。"));
+                                context.getSource().sendError(new LiteralText("[CuteChat] §c重连失败！请参考后台报错。"));
                                 ex.printStackTrace();
                             }
                             return 1;

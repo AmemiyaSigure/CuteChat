@@ -16,7 +16,11 @@ public class MixinPlayerChat {
 
     @Inject(at = @At(value = "TAIL"), method = "onChatMessage")
     public void onChatMessage(ChatMessageC2SPacket packet, CallbackInfo ci) {
-        String str = "<" + player.getDisplayName().asString() + "> " + packet.getChatMessage();
+        String msg = packet.getChatMessage();
+        if (msg.startsWith("/")) {
+            return;
+        }
+        String str = "<" + player.getDisplayName().asString() + "> " + msg;
         CuteChat.SOCKET.send(str);
     }
 }
